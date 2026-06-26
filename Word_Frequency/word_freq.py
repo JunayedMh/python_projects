@@ -29,6 +29,6 @@ class WordAnalyzer:
             print(f"{word}: {count}")
         print(f"\nTotal words: {sum(self.word_count.values())}")
         print(f"Unique words: {len(self.word_count)}")
-
-Text = WordAnalyzer(input("Enter your paragraph: "))
-Text.report()
+if __name__ == "__main__":
+    Text = WordAnalyzer(input("Enter your paragraph: "))
+    Text.report()
