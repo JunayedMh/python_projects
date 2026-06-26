@@ -56,4 +56,5 @@ class ATM:
                 print("Thanks for using ATM")
                 break
 
-ATM().run()
+if __name__ == "__main__":
+    ATM().run()
