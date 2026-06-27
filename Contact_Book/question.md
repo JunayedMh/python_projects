@@ -15,4 +15,4 @@ Rules:
   - Email validation: must contain `'@'` and `'.'`
   - No `duplicate` names allowed.
   - Search and delete are case-insensitive.
-  - Show total contact `coun`t when viewing all.
+  - Show total contact `count` when viewing all.
