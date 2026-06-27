@@ -2,7 +2,8 @@
 
 Rules:
 - Each contact: {'name': ..., 'phone': ..., 'email': ...}
-- Menu:
+
+**Menu:**
 
 1. Add contact
 2. View all contacts
