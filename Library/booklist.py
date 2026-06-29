@@ -13,9 +13,17 @@ def find_book(title):
             return book
         # else: return None {The loop was returning False after the first mismatch.}
     return None
+
+# New function to find book author to use option 4.
+
+def find_author(author):
+    for book in books:
+        if book["author"].lower() == author.lower():
+            return book
+    return None
         
 while True:
-    print("\n\n1.View 2.Borrow 3.Return 4.Author Search 5.Exit")
+    print("\n1.View 2.Borrow 3.Return 4.Author Search 5.Exit")
     print()
     choice = input("Select option: ")
 
@@ -39,3 +47,44 @@ while True:
                 print("Book is not available to borrow")
         else:
             print("Book not found.")
+
+    elif choice == "3":
+        ret = find_book(input("Enter the book title: "))
+        if not ret:
+            print("Book not available.")
+        elif ret["available"] == True:
+            print(f"{ret["title"]} was not borrowed")
+        else:
+            ret["available"] = True
+            print("Thanks for returning the book.")
+
+    elif choice == "4":
+        b = find_author(input("Search by author: "))
+        if b:
+            print(f"{b["author"]} titles: {b["title"]:<5}, {b["year"]}")
+            brw = find_book(input("Which book you want to borrow?: "))
+            if not brw:
+                print("Not available.")
+            elif brw["available"] == True:
+                print(f"{brw["title"]} is available to borrow.")
+                choice1 = input("Do you want to borrow? Yes/No: ").capitalize()
+                if choice1 == "Yes":
+                    brw["available"] = False
+                    print("Borrowed successful.")
+                else:
+                    print("Thanks for visisng the library.")
+            else:
+                print("Book is not available to borrow.")
+        else:
+            print("Not available.")
+
+    elif choice == "5":
+        break
+    else:
+        again = input("Back to the menu? Y/N: ")
+        again = again.strip().lower()
+
+        if again == "n":
+                break
+
+
